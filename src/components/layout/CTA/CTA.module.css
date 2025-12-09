@@ -1,0 +1,97 @@
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.wrapper {
+    width: 50%;
+    padding: 12.8rem 6.4rem 15.3rem 6.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.form {
+    gap: 1.6rem;
+}
+
+.switchWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.switchLabel {
+    padding: 0.8rem 1.2rem;
+}
+
+.switch {
+    padding: 0.8rem;
+    border-radius: 2.4rem;
+    border: 1px solid var(--borders);
+    display: flex;
+}
+
+.option {
+    text-align: center;
+    padding: 1.6rem;
+    border-radius: 2rem;
+    width: 100%;
+
+    &:hover:not(.active) {
+        cursor: pointer;
+        background-color: var(--base-white-05);
+    }
+
+    &.active {
+        background-color: var(--active);
+    }
+}
+
+.textarea {
+    border: 1px solid var(--borders);
+    min-height: 24rem;
+    background-color: transparent;
+    border-radius: 2.4rem;
+    padding: 1.6rem;
+    color: var(--base-white);
+    resize: none;
+
+    &::placeholder {
+        color: var(--base-white-60);
+    }
+}
+
+.file {
+    display: none;
+}
+
+.label {
+    padding: 2.4rem;
+    border-radius: 2.4rem;
+    border: 1px solid var(--borders);
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 3.2rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--base-white-05);
+    }
+}
+
+.button {
+    border: none;
+    background: var(--base-white);
+    padding: 1.6rem;
+    border-radius: 2.4rem;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+.buttonText {
+    padding: 0.8rem;
+}

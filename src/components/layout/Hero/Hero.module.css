@@ -1,0 +1,97 @@
+.container {
+    background-color: #1D1D1F;
+    width: calc(100vw - 4.8rem);
+    margin-left: 2.4rem;
+    height: calc(100vh - 4.8rem);
+    border-radius: 4.8rem;
+    position: relative;
+    padding: 64px;
+    margin-top: -40px;
+}
+
+.wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg);
+    border-radius: 0 4.8rem 0 0;
+}
+
+.buttonWrapper {
+    padding: 16px;
+    border-radius: 4.8rem;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 168px;
+    height: 168px;
+    border-radius: 4.8rem;
+    border: 1px solid var(--base-white-05);
+}
+
+.elementTop {
+    position: absolute;
+    top: -48px;
+    left: 0;
+    width: 48px;
+    transform: rotate(-90deg) scale(1.01);
+    background-color: #1D1D1F;
+}
+
+.elementBottom {
+    position: absolute;
+    bottom: 0;
+    right: -48px;
+    width: 48px;
+    transform: rotate(-90deg) scale(1.01);
+    background-color: #1D1D1F;
+}
+
+.content {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.label {
+    padding: 1.2rem 2.4rem;
+    background-color: var(--base-white-05);
+    border-radius: 1.6rem;
+    width: max-content;
+}
+
+.title {
+    max-width: 995px;
+    width: 100%;
+}
+
+.description {
+    max-width: 584px;
+    width: 100%;
+}
+
+.contactButton {
+    border: none;
+    background-color: var(--base-white);
+    border-radius: 2.4rem;
+    padding: 1.6rem;
+    width: max-content;
+}
+
+.buttonText {
+    padding: 0.8rem;
+}

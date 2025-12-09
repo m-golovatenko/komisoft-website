@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    gap: 6.4rem;
+    padding: 30rem 6.4rem;
+    align-items: end;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+.text {
+    width: 100%;
+    max-width: 96rem;
+}
+
+.title {
+    width: 100%;
+    max-width: 76.8rem;
+}

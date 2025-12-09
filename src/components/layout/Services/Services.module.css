@@ -1,0 +1,75 @@
+.container {
+}
+
+.header {
+  display: flex;
+  gap: 6.4rem;
+  padding: 0 6.4rem 4.8rem 6.4rem;
+
+  h2 {
+    width: 50%;
+  }
+}
+
+.description {
+  width: 50%;
+}
+
+.services {
+  display: flex;
+  border-top: 1px solid var(--borders);
+  border-bottom: 1px solid var(--borders);
+}
+
+.item {
+  width: 50%;
+  padding: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  height: 90.8rem;
+}
+
+.item:first-child {
+  border-right: 1px solid var(--borders);
+}
+
+.tagsContainer {
+  flex-grow: 1;
+}
+
+.tags {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 1.6rem 2.4rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  height: max-content;
+  border: 1px solid var(--base-white-10);
+  border-radius: 1.6rem;
+}
+
+.footer {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.iconContainer {
+  padding: 9.2rem 7.2rem;
+  border-radius: 2.4rem;
+  border: 1px solid var(--borders);
+}
+
+.icon {
+  width: 9.6rem;
+  height: 9.6rem;
+}
+
+.serviceDescription {
+  font-size: 2.4rem;
+  line-height: 150%;
+}

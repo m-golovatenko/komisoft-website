@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('@/assets/fonts/Unbounded-900.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('@/assets/fonts/Unbounded-300.ttf') format('truetype');
+}

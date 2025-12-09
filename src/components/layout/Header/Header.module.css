@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100vw - 4.8rem);
+    margin-left: 2.4rem;
+    top: 4rem;
+    position: sticky;
+    height: 8rem;
+    background-color: transparent;
+    z-index: 10;
+    padding: 2rem 3.2rem;
+    align-items: center;
+}
+
+.logoContainer {
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    height: 100%;
+    width: 20%;
+    background-color: var(--base-white-05);
+}
+
+.nav {
+    display: flex;
+    flex-shrink: 0;
+    width: max-content;
+    background-color: var(--objects);
+    border-radius: 1.6rem;
+    overflow: hidden;
+}
+
+.link {
+    padding: 8px 12px;
+    border-radius: 1.2rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--base-white-05);
+    }
+}
+
+.languages {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.switch {
+    display: flex;
+    padding: 4px;
+    border-radius: 1.6rem;
+    background-color: var(--objects);
+    width: 136px;
+    height: 100%;
+    align-items: center;
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    border-radius: 1.2rem;
+
+    &.active {
+        background-color: var(--base-white-05);
+    }
+
+    &:not(.active) {
+        &:hover {
+            cursor: pointer;
+            background-color: var(--base-white-05);
+        }
+    }
+}

@@ -1,0 +1,7 @@
+export { Header } from '@/components/layout/Header/Header'
+export { Hero } from '@/components/layout/Hero/Hero'
+export { About } from '@/components/layout/About/About'
+export { Projects } from '@/components/layout/Projects/Projects'
+export { Services } from '@/components/layout/Services/Services'
+export { CTA } from '@/components/layout/CTA/CTA'
+export { Footer } from '@/components/layout/Footer/Footer'
