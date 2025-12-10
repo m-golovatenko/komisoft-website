@@ -5,10 +5,10 @@ import classNames from 'classnames'
 interface Props {}
 
 export const Footer: FC<Props> = () => {
-  const links = [
+  const contacts = [
     {
       title: 'Steam',
-      link: ''
+      link: 'https://store.steampowered.com/app/2814880/Synchro/'
     },
     {
       title: 'Telegram',
@@ -16,11 +16,11 @@ export const Footer: FC<Props> = () => {
     },
     {
       title: 'Instagram',
-      link: ''
+      link: 'https://www.instagram.com/synchrobf/'
     },
     {
       title: 'Vk',
-      link: ''
+      link: 'https://vk.com/komisoft11'
     }
   ]
 
@@ -34,9 +34,15 @@ export const Footer: FC<Props> = () => {
           <h2>komisoft@yandex.ru</h2>
         </div>
         <ul className={styles.contacts}>
-          {links.map(link => (
-            <li key={link.title} className={styles.item}>
-              <a className={classNames(styles.link, 'p-24')}>{link.title}</a>
+          {contacts.map(contact => (
+            <li key={contact.title} className={styles.item}>
+              <a
+                className={classNames(styles.link, 'p-24')}
+                target={'_blank'}
+                href={contact.link}
+              >
+                {contact.title}
+              </a>
             </li>
           ))}
         </ul>

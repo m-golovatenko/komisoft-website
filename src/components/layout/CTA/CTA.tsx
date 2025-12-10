@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import styles from './CTA.module.css'
 import classNames from 'classnames'
 import { Input } from '@/components/ui'
+import { SECTIONS } from '@/const/sections'
 
 interface Props {}
 
@@ -17,7 +18,7 @@ export const CTA: FC<Props> = () => {
     { label: 'Telegram', value: 'telegram' }
   ]
   return (
-    <div className={styles.container}>
+    <section className={styles.container} id={SECTIONS.CTA}>
       <div className={styles.wrapper}>
         <h2>Обсудим проект</h2>
         <p className={classNames('p-24')}>
@@ -72,6 +73,6 @@ export const CTA: FC<Props> = () => {
           <p className={classNames(styles.buttonText, 'p-24')}>Отправить</p>
         </button>
       </div>
-    </div>
+    </section>
   )
 }

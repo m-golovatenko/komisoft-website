@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import styles from './Projects.module.css'
 import classNames from 'classnames'
+import { SECTIONS } from '@/const/sections'
 
 interface Project {
   id: string
@@ -44,7 +45,7 @@ export const Projects: FC<Props> = () => {
     }
   ]
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id={SECTIONS.projects}>
       <h2 className={styles.title}>Проекты</h2>
       <div className={styles.projectList}>
         {projects.map(project => (

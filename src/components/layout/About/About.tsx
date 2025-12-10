@@ -1,12 +1,13 @@
 import { FC } from 'react'
 import styles from './About.module.css'
 import classNames from 'classnames'
+import { SECTIONS } from '@/const/sections'
 
 interface Props {}
 
 export const About: FC<Props> = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id={SECTIONS.about}>
       <div className={styles.textContainer}>
         <p className={classNames('p-32', styles.text)}>
           Мы — амбициозная студия, объединяющая разработчиков и геймдев-команду.

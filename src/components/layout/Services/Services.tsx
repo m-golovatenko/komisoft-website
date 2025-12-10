@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import styles from './Services.module.css'
+import { SECTIONS } from '@/const/sections'
 
 interface Props {}
 
@@ -32,7 +33,10 @@ export const Services: FC<Props> = () => {
     }
   ]
   return (
-    <section className={classNames(styles.container, 'section')}>
+    <section
+      className={classNames(styles.container, 'section')}
+      id={SECTIONS.services}
+    >
       <div className={styles.header}>
         <h2>Что мы делаем</h2>
         <p className={classNames('p-24', styles.description)}>

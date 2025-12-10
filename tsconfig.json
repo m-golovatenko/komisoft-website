@@ -23,7 +23,8 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/assets/*": ["assets/*"],
-      "@/types/*": ["types/*"]
+      "@/types/*": ["types/*"],
+      "@/const/*": ["const/*"]
     }
   },
   "ts-node": {
