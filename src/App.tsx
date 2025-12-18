@@ -1,19 +1,11 @@
 import '@/styles/globals.css'
-import {
-  About,
-  CTA,
-  Footer,
-  Header,
-  Hero,
-  Projects,
-  Services
-} from '@/components/layout'
+import {About, CTA, Footer, Projects, Services} from '@/components/layout'
 
 function App() {
   return (
     <>
-      <Header />
-      <Hero />
+      {/*<Header />*/}
+      {/*<Hero />*/}
       <About />
       <Projects />
       <Services />

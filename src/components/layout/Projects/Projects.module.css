@@ -51,13 +51,17 @@
     gap: 0.8rem;
 }
 
-.tag {
-    padding: 1.2rem 1.6rem;
-    text-transform: uppercase;
-    background-color: var(--base-white-05);
-    border-radius: 1.6rem;
-}
-
 .projectTitle {
     text-transform: uppercase;
+}
+
+
+@media screen and (max-width: 1279px) {
+    .project {
+        width: 100%;
+    }
+
+    .project:nth-child(3n+2) {
+        border-right: none;
+    }
 }

@@ -2,74 +2,100 @@
 }
 
 .header {
-  display: flex;
-  gap: 6.4rem;
-  padding: 0 6.4rem 4.8rem 6.4rem;
+    display: flex;
+    gap: 6.4rem;
+    padding: 0 6.4rem;
 
-  h2 {
-    width: 50%;
-  }
+    h2 {
+        width: 50%;
+    }
 }
 
 .description {
-  width: 50%;
+    width: 50%;
 }
 
 .services {
-  display: flex;
-  border-top: 1px solid var(--borders);
-  border-bottom: 1px solid var(--borders);
+    display: flex;
+    gap: 2.4rem;
+    padding: 4.8rem 6.4rem;
 }
 
 .item {
-  width: 50%;
-  padding: 4.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-  height: 90.8rem;
+    width: 50%;
+    padding: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    height: 90.8rem;
+    border: 1px solid var(--borders);
+    border-radius: 4.8rem;
+    position: relative;
 }
 
 .item:first-child {
-  border-right: 1px solid var(--borders);
+    border-right: 1px solid var(--borders);
 }
 
 .tagsContainer {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .tags {
-  display: flex;
-  gap: 1.6rem;
-  flex-wrap: wrap;
-}
-
-.tag {
-  padding: 1.6rem 2.4rem;
-  font-size: 2rem;
-  line-height: 2.4rem;
-  height: max-content;
-  border: 1px solid var(--base-white-10);
-  border-radius: 1.6rem;
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
 }
 
 .footer {
-  display: flex;
-  gap: 3.2rem;
+    display: flex;
+    gap: 3.2rem;
 }
 
 .iconContainer {
-  padding: 9.2rem 7.2rem;
-  border-radius: 2.4rem;
-  border: 1px solid var(--borders);
+    padding: 6.8rem;
+    border-radius: 4rem;
+    background-color: var(--base-white-05);
+}
+
+.wrapper {
+    padding: 1.6rem;
+    background-color: var(--bg);
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    border-radius: 0 4.8rem 0 0;
+    border-top: 1px solid var(--borders);
+    border-right: 1px solid var(--borders);
 }
 
 .icon {
-  width: 9.6rem;
-  height: 9.6rem;
+    width: 9.6rem;
+    height: 9.6rem;
+}
+
+.elementTop {
+    position: absolute;
+    top: -48px;
+    left: 0;
+    width: 48px;
+    transform: rotate(-90deg) scale(1.01);
+}
+
+.elementBottom {
+    position: absolute;
+    bottom: 0;
+    right: -48px;
+    width: 48px;
+    transform: rotate(-90deg) scale(1.01);
+}
+
+.hiddenBox {
+    width: 21.7rem;
+    height: 17.7rem;
+    flex-shrink: 0;
 }
 
 .serviceDescription {
-  font-size: 2.4rem;
-  line-height: 150%;
+
 }

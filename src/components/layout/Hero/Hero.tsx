@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import styles from './Hero.module.css'
 import classNames from 'classnames'
+import { Tag } from '@/components/ui'
 
 interface Props {}
 
@@ -32,7 +33,7 @@ export const Hero: FC<Props> = () => {
       <div className={styles.content}>
         <div className={styles.textWrapper}>
           <div className={styles.header}>
-            <p className={classNames(styles.label, 'p-20')}>Разработка ПО</p>
+            <Tag text={'Разработка ПО'} />
             <h1 className={styles.title}>Создаем Продукты, которые помнят</h1>
           </div>
           <p className={classNames(styles.description, 'p-24')}>

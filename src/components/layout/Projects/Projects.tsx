@@ -2,6 +2,7 @@ import { FC } from 'react'
 import styles from './Projects.module.css'
 import classNames from 'classnames'
 import { SECTIONS } from '@/const/sections'
+import { Tag } from '@/components/ui'
 
 interface Project {
   id: string
@@ -58,9 +59,7 @@ export const Projects: FC<Props> = () => {
                 </p>
                 <div className={styles.tagList}>
                   {project.tags.map((tag, index) => (
-                    <p key={index} className={classNames(styles.tag, 'p-16')}>
-                      {tag}
-                    </p>
+                    <Tag text={tag} isSmall key={tag} />
                   ))}
                 </div>
               </div>

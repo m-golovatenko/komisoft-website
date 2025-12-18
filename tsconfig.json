@@ -18,13 +18,14 @@
     "noEmit": true,
     "incremental": true,
     "jsx": "react-jsx",
-    "types": ["vite/client"],
+    "types": ["vite/client", "vite-plugin-svgr/client"],
     "baseUrl": "src",
     "paths": {
       "@/components/*": ["components/*"],
       "@/assets/*": ["assets/*"],
       "@/types/*": ["types/*"],
-      "@/const/*": ["const/*"]
+      "@/const/*": ["const/*"],
+      "@/styles/*": ["styles/*"]
     }
   },
   "ts-node": {
