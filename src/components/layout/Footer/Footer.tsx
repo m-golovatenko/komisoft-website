@@ -28,7 +28,7 @@ export const Footer: FC<Props> = () => {
     <footer className={styles.container}>
       <div className={styles.header}>
         <div className={styles.cta}>
-          <p className={classNames('p-24')}>
+          <p className={classNames('p-32')}>
             Давайте вместе создавать будущее{' '}
           </p>
           <h2>komisoft@yandex.ru</h2>
@@ -48,8 +48,8 @@ export const Footer: FC<Props> = () => {
         </ul>
       </div>
       <div className={styles.footer}>
-        <p className={classNames('p-24')}>Komisoft &copy;2025</p>
-        <p className={classNames('p-24')}>Россия / Сыктывкар</p>
+        <p className={classNames('p-32')}>Komisoft &copy;2025</p>
+        <p className={classNames('p-32')}>Россия / Сыктывкар</p>
       </div>
     </footer>
   )

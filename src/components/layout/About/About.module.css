@@ -1,7 +1,7 @@
 .container {
     display: flex;
     gap: 6.4rem;
-    padding: 45rem 6.4rem;
+    padding: 24rem 6.4rem;
     align-items: end;
 }
 
@@ -13,23 +13,17 @@
 
 .text {
     width: 100%;
-    max-width: 136rem;
+    max-width: 128.8rem;
 }
 
 .title {
     width: 100%;
     max-width: 76.8rem;
-    font-size: 8rem;
 }
 
 @media screen and (max-width: 2559px) {
     .container {
         padding: 30rem 6.4rem;
-    }
-    
-
-    .title {
-        font-size: 6.4rem;
     }
 }
 

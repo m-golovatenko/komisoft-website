@@ -3,38 +3,13 @@ import classNames from 'classnames'
 import styles from './Services.module.css'
 import { SECTIONS } from '@/const/sections'
 import { Tag } from '@/components/ui'
-import Code from '@/assets/img/icons/code.svg?react'
-import Game from '@/assets/img/icons/game.svg?react'
+
+import { services } from '@/const/services'
 
 interface Props {}
 
 export const Services: FC<Props> = () => {
-  const services = [
-    {
-      id: 1,
-      title: 'Веб-сервисы',
-      stack: [
-        'React',
-        'TypeScript',
-        'PHP',
-        'RabbitMQ',
-        'Redis',
-        'MySql',
-        'Postgres'
-      ],
-      description:
-        'Работаем с серверной и клиентской частью, настраиваем базы данных и API, создаём удобные интерфейсы и сопровождаем продукт после релиза.',
-      icon: <Code />
-    },
-    {
-      id: 2,
-      title: 'Разработка Игр',
-      stack: ['C#', 'Unity', 'Wwise', 'Spine', 'Photoshop', 'Premiere Pro'],
-      description:
-        'Работаем над геймплеем, визуальным стилем и интерфейсом, чтобы игра была понятной, интересной  и качественно реализованной.',
-      icon: <Game />
-    }
-  ]
+
   return (
     <section
       className={classNames(styles.container, 'section')}
@@ -42,7 +17,7 @@ export const Services: FC<Props> = () => {
     >
       <div className={styles.header}>
         <h2>Что мы делаем</h2>
-        <p className={classNames('p-24', styles.description)}>
+        <p className={classNames('p-32', styles.description)}>
           Создаём продукты, которые работают для людей и бизнеса. От концепции
           до готового решения — наша команда сопровождает проект на каждом
           этапе.
@@ -63,7 +38,7 @@ export const Services: FC<Props> = () => {
               <div className={styles.footer}>
                 <div className={styles.wrapper}>
                   <div className={styles.iconContainer}>
-                    <div className={styles.icon}>{service.icon}</div>
+                    <div className={styles.icon}><service.icon/></div>
                   </div>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -108,7 +83,7 @@ export const Services: FC<Props> = () => {
 
                 <div className={styles.hiddenBox} />
 
-                <p className={classNames(styles.serviceDescription, 'p-24')}>
+                <p className={classNames(styles.serviceDescription, 'p-32')}>
                   {service.description}
                 </p>
               </div>

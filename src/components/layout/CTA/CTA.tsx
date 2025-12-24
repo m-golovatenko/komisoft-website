@@ -21,7 +21,7 @@ export const CTA: FC<Props> = () => {
     <section className={styles.container} id={SECTIONS.CTA}>
       <div className={styles.wrapper}>
         <h2>Обсудим проект</h2>
-        <p className={classNames('p-24')}>
+        <p className={classNames('p-32')}>
           Команда выполняет полный цикл: планирование, разработка, внедрение и
           поддержка. Оставьте заявку, чтобы обсудить задачу и получить понятный
           план работы.

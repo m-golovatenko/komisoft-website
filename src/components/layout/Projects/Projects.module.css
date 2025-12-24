@@ -22,7 +22,12 @@
 }
 
 .project:nth-child(3n+2) {
+    padding-right: 0;
     border-right: 1px solid var(--borders);
+}
+
+.project:nth-child(3n+3) {
+    padding-left: 0;
 }
 
 .content {
@@ -34,7 +39,7 @@
 
 .img {
     width: 100%;
-    height: 80rem;
+    height: 107.2rem;
     background-color: grey;
     border-radius: 2.4rem;
 }
@@ -55,6 +60,12 @@
     text-transform: uppercase;
 }
 
+
+@media (max-width: 2559px) {
+    .img {
+        height: 80rem;
+    }
+}
 
 @media screen and (max-width: 1279px) {
     .project {
