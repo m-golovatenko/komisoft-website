@@ -12,7 +12,12 @@ export const Tag: FC<Props> = ({ text, isSmall = false }) => {
     <div
       className={classNames(styles.container, isSmall && styles.containerSmall)}
     >
-      <p className={classNames(isSmall ? 'p-16' : 'p-20', styles.text)}>
+      <p
+        className={classNames(
+          isSmall ? 'p-16' : 'p-20',
+          !isSmall && styles.text
+        )}
+      >
         {text}
       </p>
     </div>

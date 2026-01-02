@@ -19,6 +19,15 @@
 .title {
     width: 100%;
     max-width: 76.8rem;
+
+
+    span {
+        display: block;
+    }
+}
+
+.brake {
+    padding: 0.4rem;
 }
 
 @media screen and (max-width: 2559px) {
@@ -30,29 +39,51 @@
 
 @media screen and (max-width: 1919px) {
     .container {
-        padding: 18rem 4.8rem;
+        padding: 9.6rem 4.8rem;
         gap: 4.8rem;
+        justify-content: space-between;
+    }
+
+    .text {
+        max-width: 96rem;
     }
 
     .title {
-        font-size: 4.8rem;
+        max-width: 46.4rem;
+    }
+
+    .textContainer {
+        gap: 3.2rem;
     }
 }
 
 @media screen and (max-width: 1279px) {
     .container {
-        padding: 16.8rem 2.4rem;
+        padding: 6.4rem 3.2rem;
         flex-direction: column;
     }
 
-    .title {
+    .text, .title {
         max-width: 100%;
-        font-size: 4rem;
+    }
+
+    .title span {
+        display: inline;
+    }
+
+    .textContainer {
+        gap: 2.4rem;
     }
 }
 
 @media screen and (max-width: 767px) {
     .container {
-        padding: 11.4rem 2.4rem;
+        padding: 4.8rem 2.4rem;
+    }
+
+    .brake {
+        padding-top: 2.4rem;
+        display: block;
+        padding-left: 0;
     }
 }

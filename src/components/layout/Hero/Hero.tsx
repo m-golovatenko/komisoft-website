@@ -2,6 +2,7 @@ import { FC } from 'react'
 import styles from './Hero.module.css'
 import classNames from 'classnames'
 import { Tag } from '@/components/ui'
+import ArrowDown from '@/assets/img/icons/arrow.svg?react'
 
 interface Props {}
 
@@ -10,7 +11,9 @@ export const Hero: FC<Props> = () => {
     <section className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.buttonWrapper}>
-          <div className={styles.button}></div>
+          <div className={styles.button}>
+            <ArrowDown/>
+          </div>
         </div>
 
         <svg

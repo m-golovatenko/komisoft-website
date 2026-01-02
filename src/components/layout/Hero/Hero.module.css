@@ -28,6 +28,9 @@
     height: 168px;
     border-radius: 4.8rem;
     border: 1px solid var(--base-white-05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .elementTop {

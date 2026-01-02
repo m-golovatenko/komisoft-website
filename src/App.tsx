@@ -1,5 +1,13 @@
 import '@/styles/globals.css'
-import {About, CTA, Footer, Projects, Services} from '@/components/layout'
+import {
+  About,
+  CTA,
+  Footer,
+  Header,
+  Hero,
+  Projects,
+  Services
+} from '@/components/layout'
 
 function App() {
   return (
@@ -8,9 +16,9 @@ function App() {
       {/*<Hero />*/}
       <About />
       <Projects />
-      <Services />
-      <CTA />
-      <Footer />
+      {/*<Services />*/}
+      {/*<CTA />*/}
+      {/*<Footer />*/}
     </>
   )
 }

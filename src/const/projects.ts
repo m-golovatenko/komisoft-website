@@ -25,14 +25,14 @@ export const projects: Project[] = [
     title: 'deeptasker',
     tags: ['Fullstack']
   },
-  {
-    id: '5',
-    title: 'Сушиман',
-    tags: ['B2B']
-  },
-  {
-    id: '6',
-    title: 'Cобрать русь',
-    tags: ['Enterprise', 'Mobile']
-  }
+  // {
+  //   id: '5',
+  //   title: 'Сушиман',
+  //   tags: ['B2B']
+  // },
+  // {
+  //   id: '6',
+  //   title: 'Cобрать русь',
+  //   tags: ['Enterprise', 'Mobile']
+  // }
 ]

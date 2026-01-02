@@ -59,6 +59,10 @@
     &::placeholder {
         color: var(--base-white-60);
     }
+
+    &:focus {
+        outline: 1px solid var(--base-white);
+    }
 }
 
 .file {
@@ -94,4 +98,30 @@
 
 .buttonText {
     padding: 0.8rem;
+}
+
+.phone {
+    border: 1px solid var(--borders);
+    border-radius: 2.4rem;
+    padding: 2.4rem;
+    width: 100%;
+    background-color: transparent;
+    color: var(--base-white);
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 1000px var(--bg) inset !important;
+        -webkit-text-fill-color: var(--base-white) !important;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    &:focus {
+        outline: 1px solid var(--base-white);
+    }
+
+    &::placeholder {
+        color: var(--base-white-60);
+    }
 }
