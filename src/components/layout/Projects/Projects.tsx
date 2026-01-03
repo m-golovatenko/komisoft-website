@@ -11,7 +11,7 @@ interface Props {}
 
 export const Projects: FC<Props> = () => {
   return (
-    <section className={styles.container} id={SECTIONS.projects}>
+    <section className={'section'} id={SECTIONS.projects}>
       <h2 className={styles.title}>Проекты</h2>
       <div className={styles.projectList}>
         {projects.map(project => (

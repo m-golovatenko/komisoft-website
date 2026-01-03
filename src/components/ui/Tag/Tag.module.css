@@ -13,3 +13,16 @@
 .text {
     padding: 0.4rem 0;
 }
+
+@media screen and (max-width: 1919px) {
+    .container {
+        padding: 1.2rem 1.6rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.8rem;
+    }
+}

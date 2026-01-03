@@ -12,7 +12,7 @@ export const Services: FC<Props> = () => {
 
   return (
     <section
-      className={classNames(styles.container, 'section')}
+      className={'section'}
       id={SECTIONS.services}
     >
       <div className={styles.header}>
@@ -38,7 +38,7 @@ export const Services: FC<Props> = () => {
               <div className={styles.footer}>
                 <div className={styles.wrapper}>
                   <div className={styles.iconContainer}>
-                    <div className={styles.icon}><service.icon/></div>
+                    <service.icon className={styles.icon}/>
                   </div>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
