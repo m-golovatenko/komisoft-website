@@ -60,7 +60,7 @@ export const CTA: FC<Props> = () => {
     { label: 'Telegram', value: 'telegram' }
   ]
   return (
-    <section className={styles.container} id={SECTIONS.CTA}>
+    <section className={classNames(styles.container, 'section')} id={SECTIONS.CTA}>
       <div className={styles.wrapper}>
         <h2>Обсудим проект</h2>
         <p className={classNames('p-32')}>

@@ -110,7 +110,7 @@ p {
 
 .p-24 {
     font-size: 2.4rem;
-    line-height: 150%;
+    line-height: 3.2rem;
 }
 
 .p-32 {
@@ -168,6 +168,11 @@ p {
         font-size: 1.6rem;
     }
 
+    .p-24 {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+
     .p-20 {
         font-size: 1.6rem;
     }
@@ -198,6 +203,10 @@ p {
 
     h3 {
         font-size: 2.4rem
+    }
+
+    .p-24 {
+        font-size: 1.4rem;
     }
 
     .section {

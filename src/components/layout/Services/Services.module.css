@@ -54,6 +54,7 @@
 .footer {
     display: flex;
     gap: 3.2rem;
+    align-items: end;
 }
 
 .iconContainer {

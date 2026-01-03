@@ -38,3 +38,17 @@
     color: var(--base-white-60);
   }
 }
+
+@media (max-width: 1919px) {
+  .wrapper {
+    padding: 1.2rem;
+    border-radius: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 0.4rem 0.8rem;
+    border-radius: 1.2rem;
+  }
+}

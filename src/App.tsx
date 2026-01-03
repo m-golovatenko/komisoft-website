@@ -17,7 +17,7 @@ function App() {
       <About />
       <Projects />
       <Services />
-      {/*<CTA />*/}
+      <CTA />
       {/*<Footer />*/}
     </>
   )
