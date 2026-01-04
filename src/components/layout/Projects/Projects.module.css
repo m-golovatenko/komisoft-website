@@ -56,6 +56,18 @@
     text-transform: uppercase;
 }
 
+.iconContainer {
+    display: none;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    background-color: var(--base-white-05);
+
+    .icon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}
+
 
 @media (max-width: 2559px) {
     .img {
@@ -86,6 +98,7 @@
     .project {
         width: 100%;
         padding: 0 1.6rem;
+        border: none;
     }
 
     .project:nth-child(3n+2) {
@@ -132,5 +145,9 @@
 
     .tagList {
         display: none;
+    }
+
+    .iconContainer {
+        display: block;
     }
 }

@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { SECTIONS } from '@/const/sections'
 import { Tag } from '@/components/ui'
 import { projects } from '@/const/projects'
+import Arrow from '@/assets/img/icons/arrow.svg?react'
 
 
 
@@ -23,9 +24,12 @@ export const Projects: FC<Props> = () => {
                   {project.title}
                 </p>
                 <div className={styles.tagList}>
-                  {project.tags.map((tag) => (
+                  {project.tags.map(tag => (
                     <Tag text={tag} isSmall key={tag} />
                   ))}
+                </div>
+                <div className={styles.iconContainer}>
+                  <Arrow className={styles.icon} />
                 </div>
               </div>
             </div>

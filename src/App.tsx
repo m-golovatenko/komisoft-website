@@ -18,7 +18,7 @@ function App() {
       <Projects />
       <Services />
       <CTA />
-      {/*<Footer />*/}
+      <Footer />
     </>
   )
 }

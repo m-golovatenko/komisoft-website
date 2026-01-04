@@ -110,7 +110,7 @@ p {
 
 .p-24 {
     font-size: 2.4rem;
-    line-height: 3.2rem;
+    line-height: 150%;
 }
 
 .p-32 {
@@ -170,7 +170,6 @@ p {
 
     .p-24 {
         font-size: 1.6rem;
-        line-height: 2.4rem;
     }
 
     .p-20 {

@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import styles from './Footer.module.css'
 import classNames from 'classnames'
+import Arrow from '@/assets/img/icons/arrow.svg?react'
 
 interface Props {}
 
@@ -8,18 +9,22 @@ export const Footer: FC<Props> = () => {
   const contacts = [
     {
       title: 'Steam',
+      icon: Arrow,
       link: 'https://store.steampowered.com/app/2814880/Synchro/'
     },
     {
       title: 'Telegram',
+      icon: Arrow,
       link: ''
     },
     {
       title: 'Instagram',
+      icon: Arrow,
       link: 'https://www.instagram.com/synchrobf/'
     },
     {
       title: 'Vk',
+      icon: Arrow,
       link: 'https://vk.com/komisoft11'
     }
   ]
@@ -29,9 +34,11 @@ export const Footer: FC<Props> = () => {
       <div className={styles.header}>
         <div className={styles.cta}>
           <p className={classNames('p-32')}>
-            Давайте вместе создавать будущее{' '}
+            Давайте вместе <span>создавать будущее</span>
           </p>
-          <h2>komisoft@yandex.ru</h2>
+          <h2>
+            komisoft@<span>yandex.ru</span>
+          </h2>
         </div>
         <ul className={styles.contacts}>
           {contacts.map(contact => (
@@ -41,7 +48,8 @@ export const Footer: FC<Props> = () => {
                 target={'_blank'}
                 href={contact.link}
               >
-                {contact.title}
+                <span className={styles.text}>{contact.title}</span>
+                <contact.icon className={styles.icon} />
               </a>
             </li>
           ))}
