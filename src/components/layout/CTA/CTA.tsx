@@ -5,6 +5,8 @@ import { Input } from '@/components/ui'
 import { SECTIONS } from '@/const/sections'
 import { IMaskInput } from 'react-imask'
 import { useForm, Controller } from 'react-hook-form'
+import Cancel from '@/assets/img/icons/cancel.svg?react'
+import PDF from '@/assets/img/icons/formats/pdf.svg?react'
 
 
 interface Props {}
@@ -59,7 +61,6 @@ export const CTA: FC<Props> = () => {
 
     console.log(payload)
   }
-
 
   const OPTIONS: { label: string; value: CTAOptions }[] = [
     { label: 'Почта', value: 'email' },
@@ -157,44 +158,49 @@ export const CTA: FC<Props> = () => {
           placeholder={'Описание проекта'}
           {...register('description')}
         />
-        <label htmlFor={'file'} className={styles.label}>
-          <span className={'p-24'}>Прикрепите файл</span>
-          <span className={classNames(styles.sublabel, 'p-16')}>
-            PDF · DOCX · до 50 МБ
-          </span>
-        </label>
-        <input
-          type='file'
-          id='file'
-          multiple
-          accept='.pdf,.doc,.docx'
-          className={styles.file}
-          onChange={e => {
-            if (!e.target.files) return
-            const newFiles = Array.from(e.target.files)
-            setFiles(prev => [...prev, ...newFiles])
-            e.target.value = ''
-          }}
-        />
-        {files.length > 0 && (
-          <ul className={styles.fileList}>
-            {files.map((file, index) => (
-              <li key={`${file.name}-${index}`} className={styles.fileItem}>
-                <span className={styles.fileIcon}>PDF</span>
-                <span className={styles.fileName}>{file.name}</span>
-                <button
-                  type='button'
-                  className={styles.remove}
-                  onClick={() =>
-                    setFiles(prev => prev.filter((_, i) => i !== index))
-                  }
-                >
-                  ×
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+        <div className={styles.fileInputContainer}>
+          <label htmlFor={'file'} className={styles.label}>
+            <span className={'p-24'}>Прикрепите файл</span>
+            <span className={classNames(styles.sublabel, 'p-16')}>
+              PDF · DOCX · до 50 МБ
+            </span>
+          </label>
+          <input
+            type='file'
+            id='file'
+            multiple
+            accept='.pdf,.doc,.docx'
+            className={styles.file}
+            onChange={e => {
+              if (!e.target.files) return
+              const newFiles = Array.from(e.target.files)
+              setFiles(prev => [...prev, ...newFiles])
+              e.target.value = ''
+            }}
+          />
+          {files.length > 0 && (
+            <ul className={styles.fileList}>
+              {files.map((file, index) => (
+                <li key={`${file.name}-${index}`} className={styles.fileItem}>
+                  <div className={styles.formatIconContainer}><PDF className={styles.formatIcon}/></div>
+                  <p className={classNames(styles.fileName, 'p-16')}>
+                    {file.name}
+                  </p>
+                  <button
+                    type='button'
+                    className={styles.cancelContainer}
+                    onClick={() =>
+                      setFiles(prev => prev.filter((_, i) => i !== index))
+                    }
+                  >
+                    <Cancel className={styles.cancelIcon} />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
         <button className={styles.button}>
           <p className={classNames(styles.buttonText, 'p-24')}>Отправить</p>
         </button>

@@ -74,7 +74,6 @@
     border: 1px solid var(--borders);
     text-align: center;
     transition: all 0.5s ease-in-out;
-    margin-bottom: 3.2rem;
     display: flex;
     flex-direction: column;
 
@@ -133,22 +132,39 @@
 
 .fileList {
     display: flex;
-    gap: 12px;
+    gap: 0.8rem;
     flex-wrap: wrap;
 }
 
 .fileItem {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
+    padding: 0.4rem;
+    border-radius: 1.6rem;
+    background: var(--active);
+    overflow: hidden;
 }
 
-.fileIcon {
-    font-size: 12px;
-    opacity: 0.7;
+.fileInputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 3.2rem;
+}
+
+.cancelIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.formatIconContainer {
+    padding: 0.8rem;
+    height: 4rem;
+}
+
+.formatIcon {
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 .fileName {
@@ -156,13 +172,19 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 8px 8px 8px 4px;
 }
 
-.remove {
+.cancelContainer {
     background: none;
     border: none;
-    cursor: pointer;
-    opacity: 0.6;
+    padding: 0.8rem;
+    height: 4rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--base-white-05);
+    }
 }
 
 @media (max-width: 1919px) {
@@ -175,9 +197,12 @@
     }
 
     .label {
-        margin-bottom: 0;
         padding: 2rem;
         border-radius: 1.6rem;
+    }
+
+    .fileInputContainer {
+        margin-bottom: 0;
     }
 
     .switch {
