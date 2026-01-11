@@ -69,17 +69,23 @@
 }
 
 .label {
-    padding: 2.4rem;
+    padding: 1.6rem;
     border-radius: 2.4rem;
     border: 1px solid var(--borders);
     text-align: center;
     transition: all 0.5s ease-in-out;
     margin-bottom: 3.2rem;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
         cursor: pointer;
         background-color: var(--base-white-05);
     }
+}
+
+.sublabel {
+    color: var(--base-white-60);
 }
 
 .button {
@@ -123,6 +129,40 @@
     &::placeholder {
         color: var(--base-white-60);
     }
+}
+
+.fileList {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.fileItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.fileIcon {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.fileName {
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
 }
 
 @media (max-width: 1919px) {

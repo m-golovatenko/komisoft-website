@@ -25,22 +25,29 @@ export const CTA: FC<Props> = () => {
   const [formOption, setFormOption] = useState<CTAOptions>('email')
   const isActive = (type: CTAOptions) => formOption === type
   const [telegram, setTelegram] = useState('')
+  const [files, setFiles] = useState<File[]>([])
 
-  const { register, control, handleSubmit, reset } = useForm<FormValues>()
+  const { register, control, handleSubmit } = useForm<FormValues>()
 
   const onSubmit = (data: FormValues) => {
-    let contact = ''
+    const formData = new FormData()
 
-    if (formOption === 'email') contact = data.email ?? ''
-    if (formOption === 'phone') contact = data.phone ?? ''
-    if (formOption === 'telegram') contact = data.telegram ?? ''
+    formData.append('name', data.name)
+    formData.append('description', data.description)
 
-    const files: FormData[] = []
+    const contact =
+      formOption === 'email'
+        ? (data.email ?? '')
+        : formOption === 'phone'
+          ? (data.phone ?? '')
+          : (data.telegram ?? '')
 
-    Array.from(data.files || []).forEach(file => {
-      const fd = new FormData()
-      fd.append('file', file)
-      files.push(fd)
+    if (contact) {
+      formData.append('contact', contact)
+    }
+
+    files.forEach(file => {
+      formData.append('files', file)
     })
 
     const payload = {
@@ -60,7 +67,10 @@ export const CTA: FC<Props> = () => {
     { label: 'Telegram', value: 'telegram' }
   ]
   return (
-    <section className={classNames(styles.container, 'section')} id={SECTIONS.CTA}>
+    <section
+      className={classNames(styles.container, 'section')}
+      id={SECTIONS.CTA}
+    >
       <div className={styles.wrapper}>
         <h2>Обсудим проект</h2>
         <p className={classNames('p-32')}>
@@ -147,15 +157,44 @@ export const CTA: FC<Props> = () => {
           placeholder={'Описание проекта'}
           {...register('description')}
         />
-        <label htmlFor={'file'} className={classNames(styles.label, 'p-24')}>
-          Прикрепите файл
+        <label htmlFor={'file'} className={styles.label}>
+          <span className={'p-24'}>Прикрепите файл</span>
+          <span className={classNames(styles.sublabel, 'p-16')}>
+            PDF · DOCX · до 50 МБ
+          </span>
         </label>
         <input
-          type={'file'}
-          id={'file'}
+          type='file'
+          id='file'
+          multiple
+          accept='.pdf,.doc,.docx'
           className={styles.file}
-          {...register('files')}
+          onChange={e => {
+            if (!e.target.files) return
+            const newFiles = Array.from(e.target.files)
+            setFiles(prev => [...prev, ...newFiles])
+            e.target.value = ''
+          }}
         />
+        {files.length > 0 && (
+          <ul className={styles.fileList}>
+            {files.map((file, index) => (
+              <li key={`${file.name}-${index}`} className={styles.fileItem}>
+                <span className={styles.fileIcon}>PDF</span>
+                <span className={styles.fileName}>{file.name}</span>
+                <button
+                  type='button'
+                  className={styles.remove}
+                  onClick={() =>
+                    setFiles(prev => prev.filter((_, i) => i !== index))
+                  }
+                >
+                  ×
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
         <button className={styles.button}>
           <p className={classNames(styles.buttonText, 'p-24')}>Отправить</p>
         </button>

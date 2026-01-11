@@ -18,11 +18,6 @@ export const Footer: FC<Props> = () => {
       link: ''
     },
     {
-      title: 'Instagram',
-      icon: Arrow,
-      link: 'https://www.instagram.com/synchrobf/'
-    },
-    {
       title: 'Vk',
       icon: Arrow,
       link: 'https://vk.com/komisoft11'
@@ -37,7 +32,7 @@ export const Footer: FC<Props> = () => {
             Давайте вместе <span>создавать будущее</span>
           </p>
           <h2>
-            komisoft@<span>yandex.ru</span>
+            hello@<span>komisoft.com</span>
           </h2>
         </div>
         <ul className={styles.contacts}>
