@@ -3,6 +3,8 @@ import styles from './Hero.module.css'
 import classNames from 'classnames'
 import { Tag } from '@/components/ui'
 import ArrowDown from '@/assets/img/icons/arrow.svg?react'
+import { HERO_CONTENT } from '@/components/layout/Hero/hero.config'
+import { HeroShape } from '@/components/layout/Hero/ui/HeroShape'
 
 interface Props {}
 
@@ -12,41 +14,27 @@ export const Hero: FC<Props> = () => {
       <div className={styles.wrapper}>
         <div className={styles.buttonWrapper}>
           <div className={styles.button}>
-            <ArrowDown/>
+            <ArrowDown />
           </div>
         </div>
 
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 100 100'
-          className={styles.elementTop}
-        >
-          <path d='m100,0H0v100C0,44.77,44.77,0,100,0Z' fill='#111113'></path>
-        </svg>
-
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 100 100'
-          className={styles.elementBottom}
-        >
-          <path d='m100,0H0v100C0,44.77,44.77,0,100,0Z' fill='#111113'></path>
-        </svg>
+        <HeroShape className={styles.elementTop} />
+        <HeroShape className={styles.elementBottom} />
       </div>
 
       <div className={styles.content}>
         <div className={styles.textWrapper}>
           <div className={styles.header}>
-            <Tag text={'Разработка ПО'} />
-            <h1 className={styles.title}>Создаем Продукты, которые помнят</h1>
+            <Tag text={HERO_CONTENT.tag} />
+            <h1 className={styles.title}>{HERO_CONTENT.title}</h1>
           </div>
           <p className={classNames(styles.description, 'p-24')}>
-            Молодая, развивающаяся компания по разработке программного
-            обеспечения
+            {HERO_CONTENT.description}
           </p>
         </div>
         <button className={styles.contactButton}>
           <p className={classNames('p-24', styles.buttonText)}>
-            Обсудить проект
+            {HERO_CONTENT.cta}
           </p>
         </button>
       </div>
