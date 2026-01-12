@@ -1,5 +1,5 @@
 .container {
-    background-color: #1D1D1F;
+    background: url('../../../assets/img/hero.png') center / cover no-repeat;
     width: calc(100vw - 4.8rem);
     margin-left: 2.4rem;
     height: calc(100vh - 4.8rem);
@@ -7,13 +7,14 @@
     position: relative;
     padding: 64px;
     margin-top: -40px;
+    aspect-ratio: 16 / 9;
 }
 
 .wrapper {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: var(--bg);
+    background: var(--bg);
     border-radius: 0 4.8rem 0 0;
 }
 

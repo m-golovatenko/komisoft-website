@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import styles from './Header.module.css'
 import classNames from 'classnames'
-import { SECTIONS } from '@/const/sections'
+import Logo from '@/assets/img/logo.jpg'
+import { LANGUAGES, NAV_LINKS } from '@/components/layout/Header/header.config'
 
 interface Props {}
 
@@ -9,38 +10,35 @@ export const Header: FC<Props> = () => {
   return (
     <header className={styles.container}>
       <div className={styles.logoContainer}>
-        <div className={styles.logo}></div>
+        <img src={Logo} alt='Komisoft logo' className={styles.logo} />
       </div>
-      <nav className={styles.nav}>
-        <a
-          className={classNames(styles.link, 'p-16')}
-          href={`#${SECTIONS.about}`}
-        >
-          О нас
-        </a>
-        <a
-          className={classNames(styles.link, 'p-16')}
-          href={`#${SECTIONS.projects}`}
-        >
-          Проекты
-        </a>
-        <a
-          className={classNames(styles.link, 'p-16')}
-          href={`#${SECTIONS.services}`}
-        >
-          Услуги
-        </a>
-        <a
-          className={classNames(styles.link, 'p-16')}
-          href={`#${SECTIONS.CTA}`}
-        >
-          Карьера
-        </a>
+
+      <nav className={styles.nav} aria-label='Основная навигация'>
+        {NAV_LINKS.map(({ label, section }) => (
+          <a
+            key={section}
+            href={`#${section}`}
+            className={classNames(styles.link, 'p-16')}
+          >
+            {label}
+          </a>
+        ))}
       </nav>
+
       <div className={styles.languages}>
         <div className={styles.switch}>
-          <p className={classNames(styles.lang, 'p-16', styles.active)}>RU</p>
-          <p className={classNames(styles.lang, 'p-16')}>EN</p>
+          {LANGUAGES.map(lang => (
+            <p
+              key={lang}
+              className={classNames(
+                styles.lang,
+                'p-16',
+                lang === 'RU' && styles.active
+              )}
+            >
+              {lang}
+            </p>
+          ))}
         </div>
       </div>
     </header>

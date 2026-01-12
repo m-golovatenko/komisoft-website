@@ -12,8 +12,8 @@ import {
 function App() {
   return (
     <>
-      {/*<Header />*/}
-      {/*<Hero />*/}
+      <Header />
+      <Hero />
       <About />
       <Projects />
       <Services />
