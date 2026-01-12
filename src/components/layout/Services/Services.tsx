@@ -3,18 +3,14 @@ import classNames from 'classnames'
 import styles from './Services.module.css'
 import { SECTIONS } from '@/const/sections'
 import { Tag } from '@/components/ui'
-
-import { services } from '@/const/services'
+import { ServiceShape } from '@/components/layout/Services/ui/ServiceShape'
+import { services } from '@/components/layout/Services/services.data'
 
 interface Props {}
 
 export const Services: FC<Props> = () => {
-
   return (
-    <section
-      className={'section'}
-      id={SECTIONS.services}
-    >
+    <section className={'section'} id={SECTIONS.services}>
       <div className={styles.header}>
         <h2>Что мы делаем</h2>
         <p className={classNames('p-32', styles.description)}>
@@ -24,72 +20,33 @@ export const Services: FC<Props> = () => {
         </p>
       </div>
       <ul className={styles.services}>
-        {services.map(service => {
-          return (
-            <li key={service.id} className={styles.item}>
-              <h3>{service.title}</h3>
-              <div className={styles.tagsContainer}>
-                <div className={styles.tags}>
-                  {service.stack.map(tag => (
-                    <Tag key={tag} text={tag} />
-                  ))}
-                </div>
+        {services.map(service => (
+          <li key={service.id} className={styles.item}>
+            <h3>{service.title}</h3>
+            <div className={styles.tagsContainer}>
+              <div className={styles.tags}>
+                {service.stack.map(tag => (
+                  <Tag key={tag} text={tag} />
+                ))}
               </div>
-              <div className={styles.footer}>
-                <div className={styles.wrapper}>
-                  <div className={styles.iconContainer}>
-                    <service.icon className={styles.icon}/>
-                  </div>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 100 100'
-                    className={styles.elementTop}
-                  >
-                    <path
-                      d='M100 0 H0 V100'
-                      fill='none'
-                      stroke='#111113'
-                      strokeWidth='6'
-                    />
-
-                    <path
-                      d='M0 100 C0 44.77 44.77 0 100 0'
-                      fill='none'
-                      stroke='#383d40'
-                      strokeWidth='3'
-                    />
-                  </svg>
-
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 100 100'
-                    className={styles.elementBottom}
-                  >
-                    <path
-                      d='M100 0 H0 V100'
-                      fill='none'
-                      stroke='#111113'
-                      strokeWidth='6'
-                    />
-
-                    <path
-                      d='M0 100 C0 44.77 44.77 0 100 0'
-                      fill='none'
-                      stroke='#383d40'
-                      strokeWidth='3'
-                    />
-                  </svg>
+            </div>
+            <div className={styles.footer}>
+              <div className={styles.wrapper}>
+                <div className={styles.iconContainer}>
+                  <service.icon className={styles.icon} />
                 </div>
-
-                <div className={styles.hiddenBox} />
-
-                <p className={classNames(styles.serviceDescription, 'p-32')}>
-                  {service.description}
-                </p>
+                <ServiceShape className={styles.elementTop} />
+                <ServiceShape className={styles.elementBottom} />
               </div>
-            </li>
-          )
-        })}
+
+              <div className={styles.hiddenBox} />
+
+              <p className={classNames(styles.serviceDescription, 'p-32')}>
+                {service.description}
+              </p>
+            </div>
+          </li>
+        ))}
       </ul>
     </section>
   )

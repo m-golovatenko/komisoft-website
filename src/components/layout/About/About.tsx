@@ -2,6 +2,7 @@ import {FC} from 'react'
 import styles from './About.module.css'
 import classNames from 'classnames'
 import {SECTIONS} from '@/const/sections'
+import { ABOUT_TEXT } from '@/components/layout/About/about.content'
 
 interface Props {}
 
@@ -10,18 +11,18 @@ export const About: FC<Props> = () => {
     <section className={styles.container} id={SECTIONS.about}>
       <div className={styles.textContainer}>
         <p className={classNames('p-40', styles.text)}>
-          Мы — амбициозная студия, объединяющая разработчиков и геймдев-команду.
-          Создаём игры, веб-сервисы и сложные бизнес-системы, где важно внимание
-          к деталям и результат.
+          {ABOUT_TEXT.firstParagraph}
         </p>
         <p className={classNames('p-40', styles.text)}>
-          Работаем честно и вдумчиво: разбираемся  в задаче, ищем решение и
-          доводим продукт до совершенства. <span className={styles.brake}>Ценим доверие, взаимовыручку  и
-          профессиональный рост — без этого не бывает сильных проектов.</span>
+          {ABOUT_TEXT.secondParagraph.text}{' '}
+          <span className={styles.brake}>
+            {ABOUT_TEXT.secondParagraph.highlight}
+          </span>
         </p>
       </div>
       <h2 className={styles.title}>
-        Мы растём, <span>потому что</span> <span>любим то,</span> что делаем.
+        {ABOUT_TEXT.title.start} <span>{ABOUT_TEXT.title.middle}</span>{' '}
+        <span>{ABOUT_TEXT.title.end}</span>
       </h2>
     </section>
   )

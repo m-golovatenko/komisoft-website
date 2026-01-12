@@ -1,17 +1,14 @@
-import { FC, useRef, useState } from 'react'
+import { FC, useState } from 'react'
 import styles from './CTA.module.css'
 import classNames from 'classnames'
 import { Input } from '@/components/ui'
 import { SECTIONS } from '@/const/sections'
 import { IMaskInput } from 'react-imask'
-import { useForm, Controller } from 'react-hook-form'
-import Cancel from '@/assets/img/icons/cancel.svg?react'
-import PDF from '@/assets/img/icons/formats/pdf.svg?react'
-
+import { Controller, useForm } from 'react-hook-form'
+import { Files } from '@/components/layout/CTA/ui/FileList'
+import { CTA_EMAIL, CTA_OPTIONS, CTA_PHONE, CTA_TELEGRAM, CTAOptions } from '@/components/layout/CTA/cta.config'
 
 interface Props {}
-
-type CTAOptions = 'email' | 'telegram' | 'phone'
 
 interface FormValues {
   name: string
@@ -22,9 +19,8 @@ interface FormValues {
   files: FileList
 }
 
-
 export const CTA: FC<Props> = () => {
-  const [formOption, setFormOption] = useState<CTAOptions>('email')
+  const [formOption, setFormOption] = useState<CTAOptions>(CTA_EMAIL)
   const isActive = (type: CTAOptions) => formOption === type
   const [telegram, setTelegram] = useState('')
   const [files, setFiles] = useState<File[]>([])
@@ -38,9 +34,9 @@ export const CTA: FC<Props> = () => {
     formData.append('description', data.description)
 
     const contact =
-      formOption === 'email'
+      formOption === CTA_EMAIL
         ? (data.email ?? '')
-        : formOption === 'phone'
+        : formOption === CTA_PHONE
           ? (data.phone ?? '')
           : (data.telegram ?? '')
 
@@ -62,11 +58,6 @@ export const CTA: FC<Props> = () => {
     console.log(payload)
   }
 
-  const OPTIONS: { label: string; value: CTAOptions }[] = [
-    { label: 'Почта', value: 'email' },
-    { label: 'Телефон', value: 'phone' },
-    { label: 'Telegram', value: 'telegram' }
-  ]
   return (
     <section
       className={classNames(styles.container, 'section')}
@@ -91,7 +82,7 @@ export const CTA: FC<Props> = () => {
             Как с вами связаться?
           </p>
           <div className={styles.switch}>
-            {OPTIONS.map(({ label, value }) => (
+            {CTA_OPTIONS.map(({ label, value }) => (
               <p
                 key={value}
                 className={classNames(
@@ -107,18 +98,18 @@ export const CTA: FC<Props> = () => {
           </div>
         </div>
 
-        {formOption === 'email' && (
+        {formOption === CTA_EMAIL && (
           <Input
             placeholder='Email'
             type='email'
             autoComplete='email'
-            {...register('email', { required: true })}
+            {...register(CTA_EMAIL, { required: true })}
           />
         )}
 
-        {formOption === 'phone' && (
+        {formOption === CTA_PHONE && (
           <Controller
-            name='phone'
+            name={CTA_PHONE}
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
@@ -132,9 +123,9 @@ export const CTA: FC<Props> = () => {
           />
         )}
 
-        {formOption === 'telegram' && (
+        {formOption === CTA_TELEGRAM && (
           <Controller
-            name='telegram'
+            name={CTA_TELEGRAM}
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
@@ -179,25 +170,12 @@ export const CTA: FC<Props> = () => {
             }}
           />
           {files.length > 0 && (
-            <ul className={styles.fileList}>
-              {files.map((file, index) => (
-                <li key={`${file.name}-${index}`} className={styles.fileItem}>
-                  <div className={styles.formatIconContainer}><PDF className={styles.formatIcon}/></div>
-                  <p className={classNames(styles.fileName, 'p-16')}>
-                    {file.name}
-                  </p>
-                  <button
-                    type='button'
-                    className={styles.cancelContainer}
-                    onClick={() =>
-                      setFiles(prev => prev.filter((_, i) => i !== index))
-                    }
-                  >
-                    <Cancel className={styles.cancelIcon} />
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <Files
+              files={files}
+              removeFile={index =>
+                setFiles(prev => prev.filter((_, i) => i !== index))
+              }
+            />
           )}
         </div>
 
