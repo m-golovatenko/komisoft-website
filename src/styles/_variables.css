@@ -3,6 +3,7 @@
     --base-white: #ffffff;
     --base-white-05: rgba(255, 255, 255, 0.05);
     --base-white-10: rgba(255, 255, 255, 0.1);
+    --base-white-50: rgba(255, 255, 255, 0.5);
     --base-white-60: rgba(255, 255, 255, 0.6);
     --borders: #383d40;
     --active: #1D1D1F;

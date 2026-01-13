@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import styles from './Header.module.css'
 import classNames from 'classnames'
-import Logo from '@/assets/img/logo.jpg'
+import Logo from '@/assets/img/logo.png'
 import { LANGUAGES, NAV_LINKS } from '@/components/layout/Header/header.config'
 
 interface Props {}

@@ -6,7 +6,13 @@ import { SECTIONS } from '@/const/sections'
 import { IMaskInput } from 'react-imask'
 import { Controller, useForm } from 'react-hook-form'
 import { Files } from '@/components/layout/CTA/ui/FileList'
-import { CTA_EMAIL, CTA_OPTIONS, CTA_PHONE, CTA_TELEGRAM, CTAOptions } from '@/components/layout/CTA/cta.config'
+import {
+  CTA_EMAIL,
+  CTA_OPTIONS,
+  CTA_PHONE,
+  CTA_TELEGRAM,
+  CTAOptions
+} from '@/components/layout/CTA/cta.config'
 
 interface Props {}
 

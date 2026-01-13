@@ -1,13 +1,21 @@
 .container {
-    background: url('../../../assets/img/hero.png') center / cover no-repeat;
+    background: url('../../../assets/img/bg/hero.png') center / cover no-repeat;
     width: calc(100vw - 4.8rem);
     margin-left: 2.4rem;
     height: calc(100vh - 4.8rem);
     border-radius: 4.8rem;
     position: relative;
     padding: 64px;
-    margin-top: -40px;
     aspect-ratio: 16 / 9;
+    max-height: 103.2rem;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    z-index: 100;
 }
 
 .wrapper {
@@ -18,13 +26,13 @@
     border-radius: 0 4.8rem 0 0;
 }
 
-.buttonWrapper {
+.elementWrapper {
     padding: 16px;
     border-radius: 4.8rem;
     box-sizing: border-box;
 }
 
-.button {
+.element {
     width: 168px;
     height: 168px;
     border-radius: 4.8rem;
@@ -52,11 +60,17 @@
     background-color: #1D1D1F;
 }
 
+.arrow {
+    width: 4.8rem;
+    height: 4.8rem;
+}
+
 .content {
-    margin-top: 100px;
+    margin-top: 13.1rem;
     display: flex;
     flex-direction: column;
-    gap: 4.8rem;
+    justify-content: space-between;
+    height: calc(100% - 13.1rem);
 }
 
 .textWrapper {
@@ -94,8 +108,237 @@
     border-radius: 2.4rem;
     padding: 1.6rem;
     width: max-content;
+    color: var(--bg);
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
 }
 
 .buttonText {
     padding: 0.8rem;
+}
+
+.hiddenBox {
+    width: 17.6rem;
+    height: 17.6rem;
+}
+
+.footer {
+    display: flex;
+    align-items: end;
+    gap: 2.4rem;
+    z-index: 100;
+}
+
+.moreInfo {
+    max-width: 36.7rem;
+    color: var(--base-white-50);
+}
+
+@media (max-width: 1919px) {
+    .container {
+        border-radius: 3.2rem;
+        padding: 6.4rem 5.2rem 6.4rem 6.4rem;
+    }
+
+    .content {
+        margin-top: 9.6rem;
+        height: calc(100% - 9.6rem);
+    }
+
+    .header {
+        gap: 2.4rem;
+    }
+
+    .elementWrapper {
+        padding: 16px;
+        border-radius: 4.8rem;
+        box-sizing: border-box;
+    }
+
+    .wrapper {
+        border-radius: 0 3.2rem 0 0;
+    }
+
+    .element {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 3.2rem;
+    }
+
+    .elementTop {
+        top: -32px;
+        width: 32px;
+    }
+
+    .elementBottom {
+        right: -32px;
+        width: 32px;
+    }
+
+    .arrow {
+        height: 3.2rem;
+        width: 3.2rem;
+    }
+
+    .hiddenBox {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .moreInfo {
+        max-width: 18.4rem;
+    }
+
+    .contactButton {
+        border-radius: 1.6rem;
+        padding: 0.8rem 1.6rem;
+    }
+
+    .description {
+        max-width: 40rem;
+    }
+}
+
+@media (max-width: 1279px) {
+    .container {
+        background: url('../../../assets/img/bg/hero_mobile.jpg') center / cover no-repeat;
+        height: calc(100vh - 3.2rem);
+        width: calc(100vw - 3.2rem);
+        border-radius: 3.2rem;
+        padding: 0 2.4rem 2.4rem 2.4rem;
+        display: flex;
+        flex-direction: column-reverse;
+        max-height: 76.8rem;
+        gap: 1.6rem;
+        border: 1px solid var(--active);
+        margin-left: 1.6rem;
+    }
+
+    .content {
+        margin-top: 2.4rem;
+        height: calc(100% - 2.4rem);
+    }
+
+    .elementWrapper {
+        padding: 16px;
+        border-radius: 4.8rem;
+        box-sizing: border-box;
+    }
+
+    .wrapper {
+        border-radius: 0;
+        background-color: transparent;
+        position: relative;
+        height: max-content;
+    }
+
+    .elementWrapper {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .element {
+        padding: 1.6rem;
+        width: max-content;
+        height: max-content;
+        border-radius: 1.6rem;
+        background-color: transparent;
+        border: 1px solid var(--base-white-10);
+    }
+
+    .elementTop {
+        display: none;
+    }
+
+    .elementBottom {
+        display: none;
+    }
+
+    .arrow {
+        height: 1.6rem;
+        width: 1.6rem;
+    }
+
+    .hiddenBox {
+        display: none;
+    }
+
+    .moreInfo {
+        max-width: 100%;
+    }
+
+    .description {
+        max-width: 40rem;
+    }
+
+    .footer {
+        justify-content: center;
+    }
+
+    .main {
+        gap: 3.2rem;
+        margin-top: 9.6rem;
+    }
+
+    .bgImage {
+        width: 150%;
+        height: 150%;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .container::before {
+        background: var(--base-white-05);
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: calc(100vw - 1.6rem);
+        height: calc(100vh - 1.6rem);
+        border-radius: 2.4rem;
+        padding: 0 1.6rem 1.6rem 1.6rem;
+        max-height: 79.6rem;
+        margin-left: 0.8rem;
+    }
+
+    .content {
+        margin-top: 3.2rem;
+        height: calc(100% - 1.6rem);
+        gap: 1.6rem;
+    }
+
+    .element {
+        padding: 0.8rem;
+        border-radius: 1.2rem;
+    }
+
+    .moreInfo {
+        max-width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .description {
+        max-width: 95%;
+    }
+
+    .main {
+        gap: 3.2rem;
+        flex: 1 0 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header {
+        gap: 1.6rem;
+    }
+
+    .textWrapper {
+        gap: 1.6rem;
+    }
 }
