@@ -11,9 +11,9 @@ export const Header: FC<Props> = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
   return (
     <header className={styles.container}>
-      <div className={styles.logoContainer}>
+      <a href='#top' className={styles.logoContainer}>
         <img src={Logo} alt='Komisoft logo' className={styles.logo} />
-      </div>
+      </a>
 
       <nav className={styles.nav} aria-label='Основная навигация'>
         {NAV_LINKS.map(({ label, section }) => (

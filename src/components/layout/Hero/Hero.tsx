@@ -11,7 +11,7 @@ interface Props {}
 
 export const Hero: FC<Props> = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id='top'>
       <div className={styles.wrapper}>
         <div className={styles.elementWrapper}>
           <div className={styles.element}>

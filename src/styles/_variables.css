@@ -11,4 +11,12 @@
 
     --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
     --ease-in-smooth: cubic-bezier(0.4, 0, 1, 1);
+
+    --space-xs: 0.8rem;
+    --space-sm: 1.6rem;
+    --space-md: 2.4rem;
+    --space-lg: 4.8rem;
+    --space-xl: 6.4rem;
+    --space-2xl: 9.6rem;
+    --space-3xl: 12.8rem;
 }

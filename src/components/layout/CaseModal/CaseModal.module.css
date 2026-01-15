@@ -1,11 +1,17 @@
 .content {
     height: 100%;
     overflow-y: auto;
+    position: relative;
 }
 
 .header {
+    position: sticky;
+    top: 0;
+    background-color: var(--active);
+    border-radius: 2.4rem;
     display: flex;
     padding: 3.2rem 3.2rem 1.6rem 3.2rem;
+
 }
 
 .caseName {
@@ -112,7 +118,7 @@
 
 .imgItem {
     height: 64rem;
-    width: calc(50% - 1.6rem);
+    width: calc(50% - 0.8rem);
     background-color: var(--base-white-05);
     object-fit: cover;
     border-radius: 2.4rem;
