@@ -15,10 +15,12 @@
 .logoContainer {
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-    height: 100%;
+    height: 4rem;
     width: min-content;
 }
 
@@ -78,5 +80,15 @@
             cursor: pointer;
             background-color: var(--base-white-05);
         }
+    }
+}
+
+@media (max-width: 1279px) {
+    .languages {
+        display: none;
+    }
+
+    .nav {
+        display: none;
     }
 }

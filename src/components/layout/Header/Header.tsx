@@ -1,12 +1,14 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import styles from './Header.module.css'
 import classNames from 'classnames'
 import Logo from '@/assets/img/logo.png'
 import { LANGUAGES, NAV_LINKS } from '@/components/layout/Header/header.config'
+import { BurgerMenu } from '@/components/layout/Header/ui/BurgerMenu/BurgerMenu'
 
 interface Props {}
 
 export const Header: FC<Props> = () => {
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false)
   return (
     <header className={styles.container}>
       <div className={styles.logoContainer}>
@@ -41,6 +43,7 @@ export const Header: FC<Props> = () => {
           ))}
         </div>
       </div>
+      {isBurgerMenuOpen && <BurgerMenu />}
     </header>
   )
 }

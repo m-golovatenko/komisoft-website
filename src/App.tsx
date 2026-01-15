@@ -3,6 +3,7 @@ import {
   About,
   CTA,
   Footer,
+  Header,
   Hero,
   Projects,
   Services
@@ -11,7 +12,7 @@ import {
 function App() {
   return (
     <>
-      {/*<Header />*/}
+      <Header />
       <Hero />
       <About />
       <Projects />

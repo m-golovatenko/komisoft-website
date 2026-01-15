@@ -1,0 +1,139 @@
+.content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    padding: 3.2rem 3.2rem 1.6rem 3.2rem;
+}
+
+.caseName {
+    text-transform: uppercase;
+    width: 100%;
+    padding: 1.6rem;
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    border-radius: 3.6rem;
+    background-color: var(--base-white-05);
+    height: max-content;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
+
+.icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.hero {
+    padding: 1.6rem 4.8rem;
+}
+
+.mainImg {
+    height: 80rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2.4rem;
+    background-color: var(--base-white-05);
+}
+
+.meta {
+    display: flex;
+    width: 100%;
+    padding: 3.2rem 4.8rem;
+    gap: 1.6rem;
+    border-bottom: 1px solid var(--borders);
+}
+
+.metaItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.metaValue {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.summary {
+    display: flex;
+    gap: 3.2rem;
+    padding: 6.4rem 3.2rem;
+}
+
+.summaryImg {
+    width: 50%;
+    border-radius: 2.4rem;
+    height: 60rem;
+    object-fit: cover;
+    background-color: var(--base-white-05);
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    width: 50%;
+}
+
+.link {
+    padding: 0.8rem 0;
+    width: 40rem;
+    border: none;
+    border-radius: 1.6rem;
+    background-color: var(--base-white);
+    color: var(--active);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        padding: 0.8rem;
+    }
+}
+
+.gallery {
+    padding: 6.4rem 4.8rem;
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+}
+
+.imgItem {
+    height: 64rem;
+    width: calc(50% - 1.6rem);
+    background-color: var(--base-white-05);
+    object-fit: cover;
+    border-radius: 2.4rem;
+}
+
+.imgItem:nth-child(3n+1) {
+    width: 100%;
+    height: 80rem;
+}
+
+.nextProject {
+    display: flex;
+    flex-direction: column;
+    padding: 6.4rem 0;
+}
+
+.nextProjectTitle {
+    padding: 0 4.8rem;
+}
+
+.nextProjectCard {
+    padding: 0 1rem;
+    border: none;
+}

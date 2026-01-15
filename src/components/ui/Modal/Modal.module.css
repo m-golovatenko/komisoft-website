@@ -1,0 +1,37 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 0.35s var(--ease-out-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.overlay.open {
+    opacity: 1;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    will-change: transform, opacity;
+    background: var(--active);
+    border: 1px solid var(--borders);
+    border-radius: 2.4rem;
+    width: 98vw;
+    height: 98vh;
+
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+
+    transition: transform 0.45s var(--ease-out-smooth),
+    opacity 0.3s ease;
+}
+
+.modal.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}

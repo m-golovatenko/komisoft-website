@@ -8,4 +8,7 @@
     --borders: #383d40;
     --active: #1D1D1F;
     --objects: #29292A;
+
+    --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-smooth: cubic-bezier(0.4, 0, 1, 1);
 }

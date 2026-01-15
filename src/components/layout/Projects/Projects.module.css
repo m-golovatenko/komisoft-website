@@ -7,25 +7,6 @@
     flex-wrap: wrap;
 }
 
-.project {
-    padding: 0 3.2rem;
-    border-bottom: 1px solid var(--borders);
-    width: 50%;
-}
-
-.project:nth-child(3n+1) {
-    width: 100%;
-}
-
-.project:nth-child(3n+2) {
-    padding-right: 0;
-    border-right: 1px solid var(--borders);
-}
-
-.project:nth-child(3n+3) {
-    padding-left: 0;
-}
-
 .content {
     display: flex;
     flex-direction: column;
@@ -33,89 +14,20 @@
     padding: 6.4rem 3.2rem;
 }
 
-.img {
-    width: 100%;
-    height: 107.2rem;
-    background-color: grey;
-    border-radius: 2.4rem;
-}
-
-.footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.tagList {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.projectTitle {
-    text-transform: uppercase;
-}
-
-.iconContainer {
-    display: none;
-    padding: 1.2rem;
-    border-radius: 1.2rem;
-    background-color: var(--base-white-05);
-
-    .icon {
-        width: 1.6rem;
-        height: 1.6rem;
-    }
-}
-
-
-@media (max-width: 2559px) {
-    .img {
-        height: 80rem;
-    }
-}
-
 @media screen and (max-width: 1919px) {
     .title {
         padding: 0 4.8rem;
-    }
-
-    .img {
-        height: 64.2rem;
     }
 
     .content {
         gap: 2.4rem;
         padding: 4.8rem 2.4rem;
     }
-
-    .project {
-        padding: 0 2.4rem;
-    }
 }
 
 @media screen and (max-width: 1279px) {
-    .project {
-        width: 100%;
-        padding: 0 1.6rem;
-        border: none;
-    }
-
-    .project:nth-child(3n+2) {
-        padding-right: 1.6rem;
-        border-right: none;
-    }
-
-    .project:nth-child(3n+3) {
-        padding-left: 1.6rem;
-    }
-
     .title {
         padding: 0 3.2rem 1.6rem 3.2rem;
-    }
-
-    .img {
-        height: 46.4rem;
     }
 
     .content {
@@ -125,9 +37,6 @@
 }
 
 @media screen and (max-width: 767px) {
-    .project, .project:nth-child(3n+2), .project:nth-child(3n+3) {
-        padding: 0 1.2rem;
-    }
 
     .content {
         gap: 0.8rem;
@@ -136,18 +45,5 @@
 
     .title {
         padding: 0 2.4rem 1.2rem 2.4rem;
-    }
-
-    .img {
-        height: 32.8rem;
-        border-radius: 1.6rem;
-    }
-
-    .tagList {
-        display: none;
-    }
-
-    .iconContainer {
-        display: block;
     }
 }
