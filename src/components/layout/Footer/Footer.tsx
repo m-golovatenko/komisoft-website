@@ -14,9 +14,15 @@ export const Footer: FC<Props> = () => {
           <p className={classNames('p-32')}>
             Давайте вместе <span>создавать будущее</span>
           </p>
-          <h2>
-            hello@<span>komisoft.com</span>
-          </h2>
+          <a
+            href='mailto:hello@komisoft.com?subject=Обсуждение%20проекта&body=Здравствуйте!%0A%0AХочу%20обсудить%20проект.'
+            aria-label='Написать на почту hello@komisoft.com'
+            className={styles.mail}
+          >
+            <h2>
+              hello@<span>komisoft.com</span>
+            </h2>
+          </a>
         </div>
         <ul className={styles.contacts}>
           {contacts.map(contact => (
