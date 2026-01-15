@@ -58,11 +58,8 @@
 }
 
 .mail {
-    border-radius: 0.8rem;
-
     &:hover {
         cursor: pointer;
-        background-color: var(--base-white-05);
     }
 }
 
