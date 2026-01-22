@@ -1,58 +1,72 @@
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import styles from './CTA.module.css'
 import classNames from 'classnames'
-import { Input } from '@/components/ui'
+import { ErrorText, Input } from '@/components/ui'
 import { SECTIONS } from '@/const/sections'
-import { IMaskInput } from 'react-imask'
 import { Controller, useForm } from 'react-hook-form'
+import { CTA_EMAIL, CTA_OPTIONS, CTA_PHONE, CTA_TELEGRAM, CTAOptions } from '@/components/layout/CTA/cta.config'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { ctaSchema, SchemaType } from '@/components/layout/CTA/cta.schema'
 import { Files } from '@/components/layout/CTA/ui/FileList'
-import {
-  CTA_EMAIL,
-  CTA_OPTIONS,
-  CTA_PHONE,
-  CTA_TELEGRAM,
-  CTAOptions
-} from '@/components/layout/CTA/cta.config'
+import { IMaskInput } from 'react-imask'
 
-interface Props {}
-
-interface FormValues {
-  name: string
-  email?: string
-  phone?: string
-  telegram?: string
-  description: string
-  files: FileList
-}
-
-export const CTA: FC<Props> = () => {
+export const CTA = () => {
   const [formOption, setFormOption] = useState<CTAOptions>(CTA_EMAIL)
   const isActive = (type: CTAOptions) => formOption === type
   const [telegram, setTelegram] = useState('')
   const [files, setFiles] = useState<File[]>([])
 
-  const { register, control, handleSubmit } = useForm<FormValues>()
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors, isValid },
+    setError,
+    clearErrors,
+    reset,
+    getValues
+  } = useForm({
+    resolver: yupResolver(ctaSchema),
+    mode: 'all'
+  })
 
-  const onSubmit = (data: FormValues) => {
-    const formData = new FormData()
-
-    formData.append('name', data.name)
-    formData.append('description', data.description)
-
-    const contact =
+  const onSubmit = (data: SchemaType) => {
+    let contact =
       formOption === CTA_EMAIL
         ? (data.email ?? '')
         : formOption === CTA_PHONE
           ? (data.phone ?? '')
           : (data.telegram ?? '')
 
+    if (formOption === CTA_PHONE && contact) {
+      contact = '+' + contact.replace(/\D/g, '')
+    }
+
+    if (!contact) {
+      setError(
+        formOption as keyof SchemaType,
+        { message: 'Укажите хотя бы один способ связи' },
+        { shouldFocus: true }
+      )
+      return
+    } else {
+      clearErrors(formOption as keyof SchemaType)
+    }
+
+    const formData = new FormData()
+
+    formData.append('name', data.name)
+    formData.append('description', data.description)
+
     if (contact) {
       formData.append('contact', contact)
     }
 
-    files.forEach(file => {
-      formData.append('files', file)
-    })
+    if (files.length) {
+      files.forEach(file => {
+        formData.append('files', file)
+      })
+    }
 
     const payload = {
       name: data.name,
@@ -62,6 +76,17 @@ export const CTA: FC<Props> = () => {
     }
 
     console.log(payload)
+  }
+
+  const handleSwitchActive = (value: CTAOptions) => {
+    clearErrors(formOption as keyof SchemaType)
+
+    reset(
+      { ...getValues(), [formOption]: '' },
+      { keepErrors: true, keepDirty: false }
+    )
+
+    setFormOption(value)
   }
 
   return (
@@ -82,7 +107,12 @@ export const CTA: FC<Props> = () => {
         className={classNames(styles.wrapper, styles.form)}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <Input placeholder={'Имя'} {...register('name', { required: true })} />
+        <Input
+          placeholder={'Имя'}
+          error={Boolean(errors.name)}
+          helperText={errors.name?.message}
+          {...register('name')}
+        />
         <div className={styles.switchWrapper}>
           <p className={classNames(styles.switchLabel, 'p-24')}>
             Как с вами связаться?
@@ -96,7 +126,7 @@ export const CTA: FC<Props> = () => {
                   isActive(value) && styles.active,
                   'p-24'
                 )}
-                onClick={() => setFormOption(value)}
+                onClick={() => handleSwitchActive(value)}
               >
                 {label}
               </p>
@@ -109,7 +139,9 @@ export const CTA: FC<Props> = () => {
             placeholder='Email'
             type='email'
             autoComplete='email'
-            {...register(CTA_EMAIL, { required: true })}
+            error={Boolean(errors.email)}
+            helperText={errors.email?.message}
+            {...register(CTA_EMAIL)}
           />
         )}
 
@@ -117,7 +149,6 @@ export const CTA: FC<Props> = () => {
           <Controller
             name={CTA_PHONE}
             control={control}
-            rules={{ required: true }}
             render={({ field }) => (
               <IMaskInput
                 {...field}
@@ -128,17 +159,21 @@ export const CTA: FC<Props> = () => {
             )}
           />
         )}
+        {formOption === CTA_PHONE && errors.phone?.message && (
+          <ErrorText helperText={errors.phone.message} />
+        )}
 
         {formOption === CTA_TELEGRAM && (
           <Controller
             name={CTA_TELEGRAM}
             control={control}
-            rules={{ required: true }}
             render={({ field }) => (
               <Input
                 {...field}
                 placeholder='@username'
                 value={telegram}
+                error={Boolean(formOption === CTA_TELEGRAM && errors.telegram)}
+                helperText={errors.telegram?.message}
                 onChange={e => {
                   const raw = e.target.value.replace(/^@+/, '')
                   const value = raw ? `@${raw}` : ''
@@ -150,11 +185,21 @@ export const CTA: FC<Props> = () => {
           />
         )}
 
-        <textarea
-          className={classNames(styles.textarea, 'p-24')}
-          placeholder={'Описание проекта'}
-          {...register('description')}
-        />
+        <div className={styles.textareaContainer}>
+          <textarea
+            className={classNames(
+              styles.textarea,
+              'p-24',
+              errors.description && styles.errors
+            )}
+            placeholder={'Описание проекта'}
+            {...register('description')}
+          />
+          {errors.description && (
+            <ErrorText helperText={errors.description.message ?? ''} />
+          )}
+        </div>
+
         <div className={styles.fileInputContainer}>
           <label htmlFor={'file'} className={styles.label}>
             <span className={'p-24'}>Прикрепите файл</span>
@@ -185,7 +230,7 @@ export const CTA: FC<Props> = () => {
           )}
         </div>
 
-        <button className={styles.button}>
+        <button className={styles.button} disabled={!isValid}>
           <p className={classNames(styles.buttonText, 'p-24')}>Отправить</p>
         </button>
       </form>

@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { forwardRef, InputHTMLAttributes, ReactNode } from 'react'
 import styles from './Input.module.css'
+import { ErrorText } from '@/components/ui'
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label?: ReactNode
@@ -30,31 +31,23 @@ export const Input = forwardRef<HTMLInputElement, Props>(
     }
 
     return (
-      <div className={styles.wrapper} onClick={handleContainerClick}>
-        <div className={styles.container}>
-          <input
-            ref={ref}
-            disabled={disabled}
-            className={classNames(
-              styles.input,
-              'p-24',
-              error && 'input-field-error',
-              inputClassName
-            )}
-            {...props}
-          />
-
-          {helperText && (
-            <p
+      <div>
+        <div className={styles.wrapper} onClick={handleContainerClick}>
+          <div className={styles.container}>
+            <input
+              ref={ref}
+              disabled={disabled}
               className={classNames(
-                'input-helper',
-                error && 'input-helper-error'
+                styles.input,
+                'p-24',
+                error && styles.error,
+                inputClassName
               )}
-            >
-              {helperText}
-            </p>
-          )}
+              {...props}
+            />
+          </div>
         </div>
+        {helperText && <ErrorText helperText={helperText} />}
       </div>
     )
   }

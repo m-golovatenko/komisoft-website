@@ -22,7 +22,7 @@ module.exports = {
     quotes: ['off'],
     'react/jsx-filename-extension': [
       2,
-      { extensions: ['.js', '.jsx', '.tsx'] }
+      { extensions: ['.js', '.jsx', 'ErrorText.tsx'] }
     ],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
