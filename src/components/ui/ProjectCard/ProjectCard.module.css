@@ -64,6 +64,7 @@
     .icon {
         width: 1.6rem;
         height: 1.6rem;
+        rotate: -90deg;
     }
 }
 
@@ -80,6 +81,11 @@
 
     .project {
         padding: 0 2.4rem;
+    }
+
+    .content {
+        gap: 2.4rem;
+        padding: 4.8rem 2.4rem;
     }
 }
 
@@ -102,6 +108,11 @@
     .img {
         height: 46.4rem;
     }
+
+    .content {
+        gap: 1.6rem;
+        padding: 1.6rem;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -121,4 +132,11 @@
     .iconContainer {
         display: block;
     }
+
+    .content {
+        gap: 0.8rem;
+        padding: 1.2rem;
+    }
 }
+
+

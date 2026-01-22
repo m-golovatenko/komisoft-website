@@ -4,7 +4,6 @@
 * {
     box-sizing: border-box;
     font-family: 'Unbounded', Arial, sans-serif;
-    @apply m-0 p-0;
 }
 
 * {
@@ -41,11 +40,22 @@ body {
     font-size: 10px;
     position: relative;
     overflow-y: auto;
-    height: 100%;
+    min-height: 100dvh;
 }
 
 body {
     padding-top: 2.4rem;
+}
+
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font: inherit;
 }
 
 li,
@@ -136,15 +146,6 @@ p {
 
 
 @media screen and (max-width: 2559px) {
-    :root {
-        --space-xs: 0.8rem;
-        --space-sm: 0.8rem;
-        --space-md: 0.8rem;
-        --space-lg: 0.8rem;
-        --space-xl: 0.8rem;
-        --space-2xl: 0.8rem;
-        --space-3xl: 0.8rem;
-    }
 
     h1 {
         font-size: 6.4rem;
